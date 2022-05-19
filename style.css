@@ -1,7 +1,53 @@
 * {
   box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 body {
   margin: 0;
+  background-color: darkslategray;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  margin: auto;
+  width: 80%;
+}
+
+.form {
+  color: black;
+  padding: 10px;
+  border: 1px solid darkgray;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.form_edit {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form_edit div {
+  width: 30%;
+}
+
+.form input {
+  border-radius: 5px;
+  margin: 5px 0px;
+}
+
+/* Removing arrows from number input*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
 }
