@@ -32,11 +32,23 @@ h1 {
 
 .form_edit div {
   width: 30%;
+  text-align: center;
 }
 
 .form input {
   border-radius: 5px;
   margin: 5px 0px;
+}
+
+#expences_container {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#expences_container td,
+#expences_container tr {
+  border: 1.5px solid black;
+  text-align: center;
 }
 
 /* Removing arrows from number input*/

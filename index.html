@@ -15,21 +15,36 @@
       <div class="form">
         <form action="" class="form_edit">
           <div>
-            Expence name:
+            Expence name: <br />
             <input type="text" id="expence_name" />
           </div>
           <div>
-            Expence amount:
+            Expence amount: <br />
             <input type="number" id="expence_amount" />
           </div>
           <div>
-            Expence date:
+            Expence date: <br />
             <input type="date" id="expence_date" />
           </div>
-          <button class="submit_box">Add expence</button>
+          <input
+            type="button"
+            class="submit_box"
+            value="Add"
+            onclick="addExpences()"
+            style="width: 10%"
+          />
         </form>
       </div>
       <hr />
+      <div class="expences">
+        <table id="expences_container">
+          <tr style="font-weight: bold">
+            <td>Expence name</td>
+            <td>Expence amount</td>
+            <td>Expence date</td>
+          </tr>
+        </table>
+      </div>
     </div>
     <script src="./script.js"></script>
   </body>
