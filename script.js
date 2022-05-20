@@ -40,6 +40,8 @@ function addExpenses() {
     id++;
     checkTable();
   } else {
+    checkTable();
+    alert('check data you entered');
     //Add an error showing info about not filling form
   }
 }
