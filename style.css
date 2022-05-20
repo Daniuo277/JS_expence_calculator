@@ -40,13 +40,17 @@ h1 {
   margin: 5px 0px;
 }
 
-#expences_container {
+.hidden {
+  display: none;
+}
+
+#Expenses_container {
   width: 100%;
   border-collapse: collapse;
 }
 
-#expences_container td,
-#expences_container tr {
+#Expenses_container td,
+#Expenses_container tr {
   border: 1.5px solid black;
   text-align: center;
 }

@@ -4,46 +4,51 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JavaScript Expence Calculator</title>
+    <title>JavaScript Expense Calculator</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div class="container">
       <div class="top_box">
-        <h1>Expence calculator</h1>
+        <h1>Expense calculator</h1>
       </div>
       <div class="form">
         <form action="" class="form_edit">
           <div>
-            Expence name: <br />
-            <input type="text" id="expence_name" />
+            Expense name: <br />
+            <input type="text" id="Expense_name" />
           </div>
           <div>
-            Expence amount: <br />
-            <input type="number" id="expence_amount" />
+            Expense amount: <br />
+            <input type="number" id="Expense_amount" />
           </div>
           <div>
-            Expence date: <br />
-            <input type="date" id="expence_date" />
+            Expense date: <br />
+            <input type="date" id="Expense_date" />
           </div>
           <input
             type="button"
             class="submit_box"
             value="Add"
-            onclick="addExpences()"
+            onclick="addExpenses()"
             style="width: 10%"
           />
         </form>
       </div>
       <hr />
-      <div class="expences">
-        <table id="expences_container">
+      <div class="Expenses hidden" id="Expenses">
+        <table id="Expenses_container">
           <tr style="font-weight: bold">
-            <td>Expence name</td>
-            <td>Expence amount</td>
-            <td>Expence date</td>
+            <td>Expense name</td>
+            <td>Expense date</td>
+            <td>Expense amount</td>
+            <td>remove</td>
           </tr>
         </table>
+        <hr />
+        <div class="total_Expenses">
+          <h2>Your total Expenses: <span id="exp_total"></span></h2>
+        </div>
       </div>
     </div>
     <script src="./script.js"></script>
