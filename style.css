@@ -55,6 +55,14 @@ h1 {
   text-align: center;
 }
 
+.total_Expenses {
+  text-align: center;
+}
+
+#exp_total {
+  color: orange;
+}
+
 /* Removing arrows from number input*/
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -66,4 +74,35 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type='number'] {
   -moz-appearance: textfield;
+}
+/* Phone media */
+@media only screen and (max-width: 870px) {
+  .form_edit div {
+    text-align: center;
+    width: 100%;
+    margin: 10px 0px;
+  }
+  .form_edit input[type='button'] {
+    width: 30% !important;
+    height: auto !important;
+    margin: 10px auto !important;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .form_edit div {
+    width: 280px;
+  }
+
+  .form_edit div:first-child {
+    margin-left: auto;
+  }
+  .form_edit input[type='button'] {
+    width: 94px;
+    margin-right: auto;
+  }
+  #Expenses_container {
+    max-width: 960px;
+    margin: 15px auto;
+  }
 }
