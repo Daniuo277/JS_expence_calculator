@@ -1,6 +1,7 @@
 // declaration of global elements
 var id = 0;
 var visible = 0;
+var error = 0;
 var exp_total = 0;
 
 function addExpenses() {
@@ -19,31 +20,37 @@ function addExpenses() {
 
   // if we have all the form inputs filled it is rendering the table object
   if (exp_amount.value && exp_name.value && exp_date.value) {
-    exp_container.innerHTML +=
-      '<tr id="element_' +
-      id +
-      '" class="table_elements"><td>' +
-      exp_name.value +
-      '</td><td>' +
-      exp_date.value +
-      '</td><td><span id="element_' +
-      id +
-      '_value">' +
-      exp_amount.value +
-      '</span>$</td>' +
-      '<td><input type="button" value="remove" ' +
-      '" onclick="remove_element(' +
-      id +
-      ')" /></td></tr>';
-    // adding value to the total
-    totalExp(id, true);
+    if (exp_amount.value < 0) {
+      alert('expense value can be negative');
+      checkTable();
+    } else {
+      exp_container.innerHTML +=
+        '<tr id="element_' +
+        id +
+        '" class="table_elements"><td>' +
+        exp_name.value +
+        '</td><td>' +
+        exp_date.value +
+        '</td><td><span id="element_' +
+        id +
+        '_value">' +
+        exp_amount.value +
+        '</span>$</td>' +
+        '<td><input type="button" value="remove" ' +
+        '" onclick="remove_element(' +
+        id +
+        ')" /></td></tr>';
 
-    // clearing the inputs
-    exp_name.value = '';
-    exp_amount.value = '';
-    exp_date.value = '';
-    id++;
-    checkTable();
+      // adding value to the total
+      totalExp(id, true);
+
+      // clearing the inputs
+      exp_name.value = '';
+      exp_amount.value = '';
+      exp_date.value = '';
+      id++;
+      checkTable();
+    }
   } else {
     checkTable();
     alert('check data you entered');
@@ -66,12 +73,12 @@ function totalExp(id, state) {
 
   if (!state) {
     // when we removing element it's removing the object value of the total
-    exp_total -= parseFloat(exp_minus, 10);
+    exp_total -= Math.round(parseFloat(exp_minus, 10) * 100) / 100;
     exp_total_element.innerHTML = exp_total + '$';
   }
   if (state) {
     // when we adding element it's adding the object value to the total
-    exp_total += parseFloat(exp_minus, 10);
+    exp_total += Math.round(parseFloat(exp_minus, 10) * 100) / 100;
     exp_total_element.innerHTML = exp_total + '$';
   }
 }
